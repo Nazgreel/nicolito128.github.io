@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>Raw-Roomintro Preview tool</title>
+<link rel="shortcut icon" href="https://play.pokemonshowdown.com/favicon.icon">
+<link rel=stylesheet href="https://play.pokemonshowdown.com/style/client.css">
+<link rel=stylesheet href="https://nicolito128.github.io/rawroomintro/style/sim-types.css">
+<link rel=stylesheet href="https://nicolito128.github.io/rawroomintro/style/battle.css">
+<link rel=stylesheet href="https://nicolito128.github.io/rawroomintro/style/utilichart.css">
+<link rel=stylesheet href="https://nicolito128.github.io/rawroomintro/style/font-awesome.css">
+<link rel=stylesheet href="https://nicolito128.github.io/rawroomintro/style/jquery.slider.min.css">
+<style>
+#header h1 {
+	color: black;
+	padding-left: 0.5em;
+	text-shadow: 2px 2px 1px #888;
+}
+#html-input, #html-output {
+	display: block;
+}
+#html-input {
+	left: 0;
+	right: auto;
+	width: 500px;
+}
+#html-output {
+	width: auto;
+	right: 0;
+	left: 501px;
+}
+#html-editor {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+</style>
+<div id="header" class="header">
+	<h1>Raw-Roomintro Preview tool</h1>
+	<div class="maintabbarbottom"></div>
+</div>
+<div class="ps-room ps-room-light scrollable" id="html-input">
+	<div id="html-editor">No dude en modificar el código de la roomintro. Los cambios seran visibles aquí.</div>
+</div>
+<div class="ps-room ps-room-light scrollable" id="html-output">
+	<div class="chat-log hasuserlist">
+		<div class="inner">
+			<div class="notice"><div class="infobox infobox-limited" id="html-caja-output"></div></div>
+			<div class="notice">Código:</div>
+			<div class="notice"><div class="infobox"><code>/rawroomintropreview <span id="html-intro-code"></span></code><br><br><h3>Extra information:</h3><ul><li><a href="https://github.com/nicolito128/rawroomintro">Github Repository</a></li><br><li><a href="https://github.com/nicolito128/nicolito128.github.io">Web Repository</li><br><li><a href="https://www.destinyshowdown.net/">Destiny Showdown</a></li><br></ul></div></div>
+		</div>
+
+	</div>
+	<ul class="userlist">
+		<li class="userlist-count" id="upperstaff-userlist-users" style="text-align:center;padding:2px 0"><small><span id="upperstaff-usercount-users">1</span> Usuario</small></li>
+		<li><button class="userbutton username"><em class="group staffgroup">#</em><strong><em>Tú</em></strong></button></li>
+	</ul>
+	<div class="chat-log-add hasuserlist"></div>
+</div>
+<script src="https://cdn.jsdelivr.net/ace/1.2.6/min/ace.js"></script>
+<script src="https://play.pokemonshowdown.com/js/lib/jquery-2.1.4.min.js"></script>
+<script src="https://play.pokemonshowdown.com/js/lib/html-css-sanitizer-minified.js"></script>
+<script src="https://play.pokemonshowdown.com/js/battledata.js"></script>
+<script>
+function parseCSS(code) {
+	var parsed = document.createElement('div')
+	parsed.innerHTML = code
+	var implDocument = document.implementation.createHTMLDocument("Temporary CSS storage")
+	var stylesheets = parsed.getElementsByTagName('style')
+	for (var i = 0; i < stylesheets.length; i++) {
+		var element = stylesheets[i]
+		// CSS element needs to be in document to be actually parsed
+		implDocument.body.appendChild(element)
+		var rules = element.sheet.cssRules
+		for (var j = 0; j < rules.length; j++) {
+			var rule = rules[j]
+			var elements = parsed.querySelectorAll(rule.selectorText)
+			for (var k = 0; k < elements.length; k++) {
+				var element = elements[k]
+				var newValue = (element.getAttribute('style') || "") + rule.style.cssText
+				element.setAttribute('style', newValue)
+			}
+		}
+	}
+	return parsed.innerHTML
+}
+function modifyRoomIntro(action, editor) {
+	var rawValue = editor.getSession().getValue()
+	localStorage.setItem('code', rawValue)
+	var value = parseCSS(rawValue)
+	document.getElementById('html-caja-output').innerHTML = Tools.sanitizeHTML(value)
+	var sanitizer = document.createElement('div')
+	sanitizer.innerHTML = value
+	document.getElementById('html-intro-code').textContent = sanitizer.innerHTML
+}
+var editor = ace.edit('html-editor')
+var session = editor.getSession()
+var Range = ace.require('ace/range').Range
+session.setOption("useWorker", false)
+session.setMode('ace/mode/html')
+session.setUseWrapMode(true)
+editor.on('change', modifyRoomIntro)
+editor.selection.setRange(new Range(0, 0, true))
+var code = localStorage.getItem('code')
+if (code) {
+	editor.getSession().setValue(code)
+}
+editor.focus()
+modifyRoomIntro(null, editor)
+</script>
