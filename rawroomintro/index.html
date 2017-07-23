@@ -84,11 +84,11 @@ ul.userlist {
 function parseCSS(code) {
 	var parsed = document.createElement('div')
 	parsed.innerHTML = code
-	var implDocument = document.implementation.createHTMLDocument("Temporary CSS storage")
+	var implDocument = document.implementation.createHTMLDocument("Almacenamiento CSS temporal")
 	var stylesheets = parsed.getElementsByTagName('style')
 	for (var i = 0; i < stylesheets.length; i++) {
 		var element = stylesheets[i]
-		// CSS element needs to be in document to be actually parsed
+		// El elemento CSS tiene que estar en el documento para ser analizado realmente
 		implDocument.body.appendChild(element)
 		var rules = element.sheet.cssRules
 		for (var j = 0; j < rules.length; j++) {
@@ -126,4 +126,82 @@ if (code) {
 }
 editor.focus()
 modifyRoomIntro(null, editor)
+
+// Obtener el campo de texto al que vamos a seguir la pista
+ var field = document.getElementById("field");
+ 
+ // Ver si se tiene un valor de autoguardado
+ if ( sessionStorage.getItem("autosave")) {
+    // Restaurar los contenidos del campo de texto
+    field.value = sessionStorage.getItem("autosave");
+ }
+ 
+ // Comprobar los contenidos del campo de texto cada segundo
+ setInterval(function(){
+    // Guardar los resultados en el objeto de almacenamiento de sesión
+    sessionStorage.setItem("autosave", field.value);
+ }, 1000);
+ 
+ if (!window.localStorage) {
+  Object.defineProperty(window, "localStorage", new (function () {
+    var aKeys = [], oStorage = {};
+    Object.defineProperty(oStorage, "getItem", {
+      value: function (sKey) { return sKey ? this[sKey] : null; },
+      writable: false,
+      configurable: false,
+      enumerable: false
+    });
+    Object.defineProperty(oStorage, "key", {
+      value: function (nKeyId) { return aKeys[nKeyId]; },
+      writable: false,
+      configurable: false,
+      enumerable: false
+    });
+    Object.defineProperty(oStorage, "setItem", {
+      value: function (sKey, sValue) {
+        if(!sKey) { return; }
+        document.cookie = escape(sKey) + "=" + escape(sValue) + "; path=/";
+      },
+      writable: false,
+      configurable: false,
+      enumerable: false
+    });
+    Object.defineProperty(oStorage, "length", {
+      get: function () { return aKeys.length; },
+      configurable: false,
+      enumerable: false
+    });
+    Object.defineProperty(oStorage, "removeItem", {
+      value: function (sKey) {
+        if(!sKey) { return; }
+        var sExpDate = new Date();
+        sExpDate.setDate(sExpDate.getDate() - 1);
+        document.cookie = escape(sKey) + "=; expires=" + sExpDate.toGMTString() + "; path=/";
+      },
+      writable: false,
+      configurable: false,
+      enumerable: false
+    });
+    this.get = function () {
+      var iThisIndx;
+      for (var sKey in oStorage) {
+        iThisIndx = aKeys.indexOf(sKey);
+        if (iThisIndx === -1) { oStorage.setItem(sKey, oStorage[sKey]); }
+        else { aKeys.splice(iThisIndx, 1); }
+        delete oStorage[sKey];
+      }
+      for (aKeys; aKeys.length > 0; aKeys.splice(0, 1)) { oStorage.removeItem(aKeys[0]); }
+      for (var iCouple, iKey, iCouplId = 0, aCouples = document.cookie.split(/\s*;\s*/); iCouplId < aCouples.length; iCouplId++) {
+        iCouple = aCouples[iCouplId].split(/\s*=\s*/);
+        if (iCouple.length > 1) {
+          oStorage[iKey = unescape(iCouple[0])] = unescape(iCouple[1]);
+          aKeys.push(iKey);
+        }
+      }
+      return oStorage;
+    };
+    this.configurable = false;
+    this.enumerable = true;
+  })());
+}
 </script>
