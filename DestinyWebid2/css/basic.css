@@ -226,39 +226,3 @@ pre {
 summary {
 	font-size:15pt;
 }
-
-.declare-config {
-	color:#71D331;
-}
-
-/* Declares */
-
-.declare-view {
-	width:600px;
-	margin-left:30%;
-	margin-top:2%;
-	margin-bottom:1%;
-}
-
-.declare-green {
-    border: 1px solid gray;
-    padding: 10px;
-    border-radius: 15px;
-    box-shadow: 1px 1px black;
-    width: 90%;
-    color: #000;
-    margin: auto;
-    min-height: 40px;
-}
-
-.declare-header {
-    box-shadow: 0 1px 1px rgba(255,255,255,0.2) inset;
-    padding: 3px;
-    border-radius: 15px 15px 0 0;
-    margin: -10px -10px 0 -10px;
-    color: #FFF;
-    font-size: 11pt;
-    text-align: center;
-    font-weight: bold;
-    font-family: "Trebuchet MS",Helvetica,sans-serif;
-}
