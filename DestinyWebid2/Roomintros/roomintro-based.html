@@ -7,7 +7,7 @@
 
  <link rel=StyleSheet href="../css/basic.css" type="text/css">
  <link rel=StyleSheet href="../css/code.css" type="text/css">
- <link rel=StyleSheet href="../css/declares.css" type="text/css">
+ <link rel=StyleSheet href="../css/roomintros.css" type="text/css">
  
  </head>
  <body>
@@ -25,46 +25,50 @@
 
   <div id="comentario">
     <p>
-	Esta es una <strong>base para un declare</strong> con valores personalizables, que también contiene algo de HTML y CSS. 	<br>	<br> 
- 
-El editar la <b>configuración</b> es muy simple, solamente agregamos los valores necesarios en <span class="declare-config">config()</span>, el valor <b>bg:</b><i>LINK</i> si queremos un fondo, 
-	y <b>header:</b><i>COLOR HEXADECIMAL</i> para editar la cabecera. Tiene incluida una imagen entre medias para, además de ser estetico, poder desplegar y ver el fondo lo más completo posible.
+     Esta es una <strong>base bastante simple</strong> para la <b>roomintro</b> de una sala comun. Se puede editar fácilmente el fondo (background-image) y cursor, que se muestran en el primer <span class="esc-roomintro">div</span>.
 	</p>
  </div>
 
 <br> 
 	 
  <pre>
-  <span class="declare-config">/declare config(bg: http://i.imgur.com/NKZgl6i.jpg,header: #0F4BCA)</span>
-&ltbr&gt 
- &ltdiv style="text-align: center ; margin: auto"&gt 
-   &ltimg src="http://i.imgur.com/VIdFKii.gif" &gt  
-&ltbr&gt
-&ltbr&gt 
-   &ltfont Color="red" size="20"&gt
-    &ltspan style="color: #EFFBFB ; background: rgba(0, 0, 0, 0.65) ; padding: 3px ; size: 13pt`; font-weight: bold; text-shadow: 1px 1px 3px #517BFF"&gt
-	&ltpink&gtDeclare Title&lt/pink&gt
-   &lt/font&gt
-&ltbr&gt
-&ltbr&gt
- &ltspan style="red" size="9"&gt
-   &ltspan style="color: #FFFFFF ; background: rgba(0, 0, 0, 0.65) ; padding: 3px ; size: 17pt`; font-weight: bold; text-shadow: 1px 1px 3px #90B9EA"&gt
-This statement focuses on water-type Pokémon!
-   &lt/span&gt
-&ltbr&gt
-&ltbr&gt
-   &ltbutton name="JoinRoom" value="Arena de Batalla" style="border: 1px solid #0F4BCA; background: #0F4BCA; box-shadow: 0px 1px 1px rgba(255 , 255 , 255 , 0.3) inset ; color: white ; border-radius: 4px ; margin: 1px 6px ; padding: 2px 4px"&gt
-     &ltstrong&gtGo Arena de Batalla&lt/strong&gt
-   &lt/button&gt
+<span class="esc-roomintro">&ltdiv style="background-image: url(&quot;https://i.imgur.com/kX4b42w.png&quot;) ; cursor: url(&quot;https://vignette1.wikia.nocookie.net/es.pokemon/images/d/d7/Milotic_icon.png/revision/latest?cb=20131103020815&quot;) , auto ; -webkit-background-size: cover ; -moz-background-size: cover ; border-style: solid ; border-radius: 3px ; background-size: cover"&gt </span>
+&ltbr&gt&ltbr&gt
+&ltbr&gt&ltbr&gt
+&ltbr&gt&ltbr&gt
+&ltbr&gt&ltbr&gt
+&ltbr&gt&ltbr&gt
+&ltbr&gt&ltbr&gt
+&ltbr&gt&ltbr&gt
+&ltbr&gt&ltbr&gt
+&ltdiv style="text-align: center ; margin: auto"&gt
+&ltbutton name="send" value="/roomauth" style="border: 1px solid #000 ; background: #261f43 ; box-shadow: 0px 1px 1px rgba(255 , 255 , 255 , 0.3) inset ; color: #000 ; border-radius: 4px ; margin: 1px 0px ; padding: 3px 4px"&gt
+ &ltstrong&gtRoomauth&lt/strong&gt
+&lt/button&gt
+&lta href="#LINK" target="_blank"&gt
+&ltbutton style="border: 1px solid #000 ; background: #261f43 ; box-shadow: 0px 1px 1px rgba(255 , 255 , 255 , 0.3) inset ; color: #000 ; border-radius: 4px ; margin: 1px 6px ; padding: 2px 4px"&gt
+ &ltstrong&gtReglas&lt/strong&gt
+&lt/button&gt
+&lt/a&gt
+&lta href="#LINK" target="_blank"&gt
+&ltbutton style="border: 1px solid #000 ; background: #261f43 ; box-shadow: 0px 1px 1px rgba(255 , 255 , 255 , 0.3) inset ; color: #000 ; border-radius: 4px ; margin: 1px 6px ; padding: 2px 4px"&gt
+ &ltstrong&gtButton&lt/strong&gt
+&lt/button&gt
+&lt/a&gt
 &lt/div&gt
+&ltbr&gt
+&ltdiv style="padding: 5px ; border: 2px solid black ; background: #261f43 ; color: #000 ; text-shadow: 0px -1px 0px ; border-radius: 160px ; margin: 2px"&gt
+  &ltmarquee behavior="scroll" direction="left"&gtBienvenidos a Guardians of The Night&lt/marquee&gt
+&ltbr&gt
+&lt/div&gt
+<span class="esc-roomintro">&lt/div&gt </span>
  </pre>
 
  <details class="vistaprew">
     <summary>Vista previa</summary>
 	 <code>
- 	 <div class="declare-view">
-	 <div class="declare declare-green" style="background-image: url(&quot;https://i.imgur.com/NKZgl6i.jpg&quot;); height: auto; background-size: cover"><div class="declare-header" style="background: rgb(15, 75, 202); box-shadow: 0 3px 10px rgba(15, 75, 202, 0.5)"><strong>Declaración de </strong> <span class="username">n128</span></div><div class="declare-body"><br> <div style="text-align: center ; margin: auto"> <img src="https://i.imgur.com/VIdFKii.gif"> <br> <br> <span style="font-size: 20px ; color: red"> <span style="color: #effbfb ; background: rgba(0 , 0 , 0 , 0.65) ; padding: 3px ; font-weight: bold ; text-shadow: 1px 1px 3px #517bff"> Declare Title </span></span> <br> <br> <span> <span style="color: #ffffff ; background: rgba(0 , 0 , 0 , 0.65) ; padding: 3px ; font-weight: bold ; text-shadow: 1px 1px 3px #90b9ea"> This statement focuses on water-type Pok&#xE9;mon! </span> <br> <br> <button value="Arena de Batalla" style="border: 1px solid #0f4bca ; background: #0f4bca ; box-shadow: 0px 1px 1px rgba(255 , 255 , 255 , 0.3) inset ; color: white ; border-radius: 4px ; margin: 1px 6px ; padding: 2px 4px"> <strong>Go Arena de Batalla</strong> </button> </span></div></div></div>
-	 </div>	 </code>
+ 	 <div class="roomintro-view">
+<div style="background-image: url(&quot;https://i.imgur.com/kX4b42w.png&quot;) ; cursor: url(&quot;https://vignette1.wikia.nocookie.net/es.pokemon/images/d/d7/Milotic_icon.png/revision/latest?cb=20131103020815&quot;) , auto ; -webkit-background-size: cover ; -moz-background-size: cover ; border-style: solid ; border-radius: 3px ; background-size: cover"> </span> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br> <div style="text-align: center ; margin: auto"> <button name="send" value="/roomauth" style="border: 1px solid #000 ; background: #261f43 ; box-shadow: 0px 1px 1px rgba(255 , 255 , 255 , 0.3) inset ; color: #000 ; border-radius: 4px ; margin: 1px 0px ; padding: 3px 4px"> <strong>Roomauth</strong> </button> <a href="#LINK" target="_blank"> <button style="border: 1px solid #000 ; background: #261f43 ; box-shadow: 0px 1px 1px rgba(255 , 255 , 255 , 0.3) inset ; color: #000 ; border-radius: 4px ; margin: 1px 6px ; padding: 2px 4px"> <strong>Reglas</strong> </button> </a> <a href="#LINK" target="_blank"> <button style="border: 1px solid #000 ; background: #261f43 ; box-shadow: 0px 1px 1px rgba(255 , 255 , 255 , 0.3) inset ; color: #000 ; border-radius: 4px ; margin: 1px 6px ; padding: 2px 4px"> <strong>Button</strong> </button> </a> </div> <br> <div style="padding: 5px ; border: 2px solid black ; background: #261f43 ; color: #000 ; text-shadow: 0px -1px 0px ; border-radius: 160px ; margin: 2px"> <marquee>Bienvenidos a Guardians of The Night</marquee> <br> </div>	 </div>	 </code>
  </details>
  
  </body>
