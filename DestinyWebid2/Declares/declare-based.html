@@ -1,0 +1,132 @@
+<!doctype HTML>
+<html lang="es">
+ <head>
+
+ <meta charset="utf-8">
+ <title>Plantilla básica para Declares</title>
+
+ <link rel=StyleSheet href="../css/basic.css" type="text/css">
+ <link rel=StyleSheet href="../css/icons.css" type="text/css">
+ 
+ </head>
+ <body>
+
+<div class="container">
+<ul id="nav">
+<li><a href="#"><span><img width="20px" src="../images/folder-open.svg" /> Declares</span></a>
+<div class="subs">
+<div class="col">
+<ul>
+<li><a href="#"><img  src="../images/eye.svg" /> Link 1</a></li>
+<li><a href="#"><img  src="../images/eye.svg" /> Link 2</a></li>
+<li><a href="#"><img  src="../images/eye.svg" /> Link 3</a></li>
+<li><a href="#"><img  src="../images/eye.svg" /> Link 4</a></li>
+<div class="subs">
+<div class="col">
+<ul>
+<li><a href="#"><img  src="../images/eye.svg" /> Link 41</a></li>
+<li><a href="#"><img  src="../images/eye.svg" /> Link 42</a></li>
+<li><a href="#"><img  src="../images/eye.svg" /> Link 43</a></li>
+<li><a href="#"><img  src="../images/eye.svg" /> Link 44</a></li>
+<li><a href="#"><img  src="../images/eye.svg" /> Link 45</a></li>
+</ul>
+</div>
+<div class="col">
+<ul>
+<li><a href="#"><img src="../images/eye.svg" /> Link 46</a></li>
+<li><a href="#"><img src="../images/eye.svg" /> Link 47</a></li>
+<li><a href="#"><img src="../images/eye.svg" /> Link 48</a></li>
+<li><a href="#"><img src="../images/eye.svg" /> Link 49</a></li>
+</ul>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="col">
+<ul>
+<li><a href="#"><img src="../images/eye.svg" /> Link 6</a></li>
+<li><a href="#"><img src="../images/eye.svg" /> Link 7</a></li>
+<li><a href="#"><img src="../images/eye.svg" /> Link 8</a></li>
+<li><a href="#"><img src="../images/eye.svg" /> Link 9</a></li>
+<li><a href="#"><img src="../images/eye.svg" /> Link 10</a></li>
+</ul>
+</div>
+</div>
+</li>
+<li><a href="#"><img width="20px" src="../images/home.svg" /> Home</a></li>
+
+<li><a href="#"><span><img width="20px" src="../images/folder-open.svg" /> Roomintros</span></a>
+<div class="subs">
+<div class="col">
+<ul>
+<li><a href="#"><img src="../images/eye.svg" /> Link 1</a></li>
+<li><a href="#"><img src="../images/eye.svg" /> Link 2</a></li>
+<li><a href="#"><img src="../images/eye.svg" /> Link 3</a></li>
+<li><a href="#"><img src="../images/eye.svg" /> Link 4</a></li>
+<li><a href="#"><img src="../images/eye.svg" /> Link 5</a></li>
+</ul>
+</div>
+<div class="col">
+<ul>
+<li><a href="#"><img src="../images/eye.svg" /> Link 6</a></li>
+<li><a href="#"><img src="../images/eye.svg" /> Link 7</a></li>
+<li><a href="#"><img src="../images/eye.svg" /> Link 8</a></li>
+<li><a href="#"><img src="../images/eye.svg" /> Link 9</a></li>
+<li><a href="#"><img src="../images/eye.svg" /> Link 10</a></li>
+</ul>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<br><br>
+
+<br>
+
+  <div id="comentario">
+    <p>
+	Esta es una <strong>base para un declare</strong> con valores personalizables, que también contiene algo de HTML y CSS. 	<br>	<br> 
+ 
+El editar la <b>configuración</b> es muy simple, solamente agregamos los valores necesarios en <span class="declare-config">config()</span>, el valor <b>bg:</b><i>LINK</i> si queremos un fondo, 
+	y <b>header:</b><i>COLOR HEXADECIMAL</i> para editar la cabecera. Tiene incluida una imagen entre medias para, además de ser estetico, poder desplegar y ver el fondo lo más completo posible.
+	</p>
+ </div>
+
+<br> 
+	 
+ <pre>
+  <span class="declare-config">/declare config(bg: http://i.imgur.com/NKZgl6i.jpg,header: #0F4BCA)</span>
+&ltbr&gt 
+ &ltdiv style="text-align: center ; margin: auto"&gt 
+   &ltimg src="http://i.imgur.com/VIdFKii.gif" &gt  
+&ltbr&gt
+&ltbr&gt 
+   &ltfont Color="red" size="20"&gt
+    &ltspan style="color: #EFFBFB ; background: rgba(0, 0, 0, 0.65) ; padding: 3px ; size: 13pt`; font-weight: bold; text-shadow: 1px 1px 3px #517BFF"&gt
+	&ltpink&gtDeclare Title&lt/pink&gt
+   &lt/font&gt
+&ltbr&gt
+&ltbr&gt
+ &ltspan style="red" size="9"&gt
+   &ltspan style="color: #FFFFFF ; background: rgba(0, 0, 0, 0.65) ; padding: 3px ; size: 17pt`; font-weight: bold; text-shadow: 1px 1px 3px #90B9EA"&gt
+This statement focuses on water-type Pokémon!
+   &lt/span&gt
+&ltbr&gt
+&ltbr&gt
+   &ltbutton name="JoinRoom" value="Arena de Batalla" style="border: 1px solid #0F4BCA; background: #0F4BCA; box-shadow: 0px 1px 1px rgba(255 , 255 , 255 , 0.3) inset ; color: white ; border-radius: 4px ; margin: 1px 6px ; padding: 2px 4px"&gt
+     &ltstrong&gtGo Arena de Batalla&lt/strong&gt
+   &lt/button&gt
+&lt/div&gt
+ </pre>
+
+ <details class="vistaprew">
+    <summary>Vista previa</summary>
+	 <code>
+ 	 <div class="declare-view">
+	 <div class="declare declare-green" style="background-image: url(&quot;https://i.imgur.com/NKZgl6i.jpg&quot;); height: auto; background-size: cover"><div class="declare-header" style="background: rgb(15, 75, 202); box-shadow: 0 3px 10px rgba(15, 75, 202, 0.5)"><strong>Declaración de </strong> <span class="username">n128</span></div><div class="declare-body"><br> <div style="text-align: center ; margin: auto"> <img src="https://i.imgur.com/VIdFKii.gif"> <br> <br> <span style="font-size: 20px ; color: red"> <span style="color: #effbfb ; background: rgba(0 , 0 , 0 , 0.65) ; padding: 3px ; font-weight: bold ; text-shadow: 1px 1px 3px #517bff"> Declare Title </span></span> <br> <br> <span> <span style="color: #ffffff ; background: rgba(0 , 0 , 0 , 0.65) ; padding: 3px ; font-weight: bold ; text-shadow: 1px 1px 3px #90b9ea"> This statement focuses on water-type Pok&#xE9;mon! </span> <br> <br> <button value="Arena de Batalla" style="border: 1px solid #0f4bca ; background: #0f4bca ; box-shadow: 0px 1px 1px rgba(255 , 255 , 255 , 0.3) inset ; color: white ; border-radius: 4px ; margin: 1px 6px ; padding: 2px 4px"> <strong>Go Arena de Batalla</strong> </button> </span></div></div></div>
+	 </div>	 </code>
+ </details>
+
+ </body>
+</html>
