@@ -8,14 +8,6 @@ body {
     margin-left:34%;	
 }
 
-.container img {
-	width:32px;
-}
-
-.col img {
-	width:15px;
-}
-
 ul#nav {
     display:block;
     float:left;
