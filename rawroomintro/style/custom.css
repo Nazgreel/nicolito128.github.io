@@ -13,3 +13,50 @@
 div {
     display: block;
 }
+
+.chat-log .notice, .chat-log .chat, .pm-log .chat {
+    padding: 3px 0 3px 0;
+    font-size: 9pt;
+    overflow-x: auto;
+    overflow-y: hidden;
+    line-height: 1.33;
+}
+Inherited from div.chat-log
+chat.css?d9726b35:1
+.chat-log {
+    contain: layout style;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 40px;
+    font-size: 10pt;
+    background: url(//i.imgur.com/TAfC4d4.png)!important;
+    border-top: 2px solid #2E2E2E;
+    color: black;
+    word-wrap: break-word;
+    overflow: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+Inherited from div#room-ligadestiny.ps-room.ps-room-light
+client.css?6b2eaabb:1
+.ps-room.ps-room-light {
+    background: rgba(235,235,251,0.9);
+    color: black;
+}
+Inherited from body
+(index):32
+body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    font-size: 13pt;
+    font-family: Helvetica,Arial,sans-serif;
+    overflow: auto;
+    background: #1C1C1C no-repeat center center fixed;
+    background-size: cover;
+    background-repeat: repeat-x;
+}
