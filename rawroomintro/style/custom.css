@@ -21,8 +21,7 @@ div {
     overflow-y: hidden;
     line-height: 1.33;
 }
-Inherited from div.chat-log
-chat.css?d9726b35:1
+
 .chat-log {
     contain: layout style;
     position: absolute;
@@ -39,14 +38,12 @@ chat.css?d9726b35:1
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
 }
-Inherited from div#room-ligadestiny.ps-room.ps-room-light
-client.css?6b2eaabb:1
+
 .ps-room.ps-room-light {
     background: rgba(235,235,251,0.9);
     color: black;
 }
-Inherited from body
-(index):32
+
 body {
     position: absolute;
     top: 0;
