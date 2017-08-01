@@ -57,3 +57,12 @@ body {
     background-size: cover;
     background-repeat: repeat-x;
 }
+
+.infobox.infobox-limited {
+    color: #2E2E2E;
+    padding: 3px 8px 8px;
+    font-family: Arial,Verdana,Helvetica,sans-serif;
+    font-size: 1.1em;
+    text-align: justify;
+    box-sizing: border-box;
+}
