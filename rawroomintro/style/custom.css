@@ -1,0 +1,15 @@
+.broadcast-blue {
+    background: linear-gradient(black,navy);
+    font-family: Palatino Linotype,Times,Serif;
+    font-size: 10pt;
+    color: lightgoldenrodyellow;
+    text-shadow: 1px 1px purple;
+    padding: 10px 10px;
+    border-radius: 10px;
+    border-top: 1px solid black;
+    box-shadow: 2px 2px darkslategrey;
+}
+
+div {
+    display: block;
+}
